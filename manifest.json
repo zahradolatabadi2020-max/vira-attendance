@@ -1,0 +1,17 @@
+{
+  "name": "سامانه ویرا",
+  "short_name": "ویرا",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a2a44",
+  "icons": [
+    {
+      "src": "image-(74).webp",
+      "sizes": "876x849",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ]
+}
