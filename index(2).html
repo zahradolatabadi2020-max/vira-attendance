@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101d35">
+  <meta name="description" content="سامانه حضور و غیاب ویرا؛ ثبت ورود و خروج با تأیید موقعیت مکانی شما">
+  <title>ویرا | سامانه حضور و غیاب</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    :root{color-scheme:light;--navy:#101d35;--navy2:#172a49;--teal:#138c87;--teal-dark:#087772;--gold:#e6b85c;--ink:#17233a;--muted:#708096;--line:#e7ebf0;--paper:#fff;--canvas:#f3f5f8;--shadow:0 20px 54px rgba(20,36,62,.13)}
+    *{box-sizing:border-box}html{min-height:100%;background:var(--canvas)}body{margin:0;min-height:100vh;color:var(--ink);font-family:Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.75;background:var(--canvas)}button{font:inherit}.page{width:min(100%,520px);min-height:100vh;margin:0 auto;background:var(--paper);box-shadow:0 0 50px rgba(20,36,62,.07);overflow:hidden}.hero{height:300px;position:relative;overflow:hidden;color:#fff;background:radial-gradient(ellipse at 84% 9%,rgba(42,93,119,.34),transparent 43%),linear-gradient(145deg,#101b31 0%,#142644 62%,#142d48 100%);padding:calc(28px + env(safe-area-inset-top)) 26px 72px}.hero:after{content:"";position:absolute;inset:auto 0 0;height:95px;background:linear-gradient(0deg,rgba(7,19,37,.38),transparent);pointer-events:none}.ornament{position:absolute;inset:0;width:100%;height:100%;opacity:.48;pointer-events:none}.topline{position:relative;z-index:1;display:flex;align-items:center;gap:13px}.emblem{width:53px;height:53px;border:1px solid rgba(230,184,92,.6);border-radius:17px;background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.035));display:grid;place-items:center;box-shadow:inset 0 0 20px rgba(230,184,92,.06);flex:none}.emblem svg{width:35px;height:35px}.brand-name{font-size:20px;font-weight:800;letter-spacing:.1px;margin:0;color:#fff}.brand-caption{font-size:11px;color:#b6c6d8;margin:0;letter-spacing:.2px}.hero-copy{position:relative;z-index:1;margin-top:32px}.kicker{display:flex;align-items:center;gap:8px;color:#e6c980;font-size:11px;font-weight:700;letter-spacing:.2px}.kicker:before{content:"";width:22px;height:1px;background:var(--gold)}h1{font-size:25px;line-height:1.5;letter-spacing:-.4px;margin:7px 0 0;font-weight:800}.hero-sub{margin:4px 0 0;color:#bfccda;font-size:13px}.main{position:relative;z-index:2;margin:-43px 16px 0;padding:24px 19px 22px;border-radius:24px 24px 18px 18px;background:#fff;box-shadow:var(--shadow);border:1px solid rgba(228,233,239,.9)}.intro{display:flex;align-items:flex-start;gap:12px;margin:0 0 19px}.pin{width:40px;height:40px;display:grid;place-items:center;flex:none;border-radius:14px;background:#eff8f7;color:var(--teal)}.pin svg{width:22px;height:22px}.intro-text strong{display:block;font-size:14px;color:#26334a;margin:0 0 1px}.intro-text p{font-size:12px;line-height:1.8;color:var(--muted);margin:0}.actions{display:grid;grid-template-columns:1fr 1fr;gap:11px}.action{position:relative;min-height:96px;border:1px solid transparent;border-radius:17px;color:white;padding:13px 10px 12px;cursor:pointer;text-align:center;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;overflow:hidden}.action:before{content:"";position:absolute;width:90px;height:90px;border:1px solid rgba(255,255,255,.13);border-radius:50%;top:-52px;left:-22px}.action.in{background:linear-gradient(145deg,#159d97,#087b77);box-shadow:0 8px 18px rgba(19,140,135,.16)}.action.out{background:linear-gradient(145deg,#1a3155,#101d35);box-shadow:0 8px 18px rgba(16,29,53,.14)}.action:hover{transform:translateY(-2px);filter:brightness(1.04)}.action[aria-pressed="true"]{outline:3px solid rgba(230,184,92,.72);outline-offset:2px;box-shadow:0 9px 22px rgba(18,37,62,.19)}.action .icon{display:grid;place-items:center;margin:0 auto 5px;width:29px;height:29px;border-radius:10px;background:rgba(255,255,255,.13)}.action .icon svg{width:18px;height:18px}.action strong{display:block;font-size:15px;line-height:1.5}.action small{display:block;color:rgba(255,255,255,.74);font-size:10px;margin-top:1px}.picked{display:flex;align-items:center;gap:9px;margin:14px 1px 13px;padding:9px 11px;border-radius:12px;background:#f7f8fa;color:#66758a;font-size:12px}.picked .check{display:grid;place-items:center;width:25px;height:25px;flex:none;border-radius:8px;background:#fff2d6;color:#b17e24;font-weight:bold}.picked b{color:#39475d}.picked #selectionText{color:#68778b}.submit{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:52px;padding:12px 16px;border:0;border-radius:14px;background:linear-gradient(105deg,#e8bd63,#dba747);color:#17233a;font-size:14px;font-weight:800;cursor:pointer;box-shadow:0 8px 19px rgba(211,161,67,.24);transition:filter .18s,transform .18s}.submit:hover{filter:brightness(1.035);transform:translateY(-1px)}.submit:disabled{opacity:.7;cursor:wait;transform:none;box-shadow:none}.submit svg{width:18px;height:18px}.action:focus-visible,.submit:focus-visible{outline:3px solid #91c9c5;outline-offset:3px}.status{display:none;margin-top:13px;padding:11px 12px;border-radius:12px;border:1px solid #dfe6ed;background:#f7f9fb;font-size:12px;line-height:1.8;overflow-wrap:anywhere}.status.show{display:block}.status.info{color:#37556b}.status.success{background:#eef8f1;border-color:#cce8d4;color:#286445}.status.error{background:#fff4f1;border-color:#f0d5cf;color:#99483e}.status .coords{direction:ltr;text-align:right;font-size:11px;margin-top:4px}.safety{display:flex;align-items:flex-start;gap:9px;margin-top:15px;padding:11px 12px;border-radius:12px;background:#f6f8fa;color:#69788b;font-size:11px;line-height:1.8}.safety svg{width:16px;height:16px;flex:none;margin-top:2px;color:#a77a2d}.safety p{margin:0}.guide{padding:16px 25px 8px;color:#6b798c;font-size:11px;line-height:1.9}.guide p{margin:5px 0}.guide strong{color:#344258}.secure{display:inline-flex;align-items:center;gap:5px;color:#68788b}.secure svg{width:13px;height:13px;color:var(--teal)}.footer{text-align:center;color:#9aa5b3;font-size:10px;padding:7px 15px max(20px,env(safe-area-inset-bottom))}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(min-width:560px){body{padding:26px 0}.page{min-height:calc(100vh - 52px);border-radius:24px}.hero{border-radius:24px 24px 0 0}.footer{padding-bottom:22px}}
+    @media(max-width:360px){.hero{padding-inline:21px}.main{margin-inline:11px;padding:21px 15px 18px}.action{padding-inline:6px}.hero h1{font-size:23px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <svg class="ornament" viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="none" stroke="#d9b45f" stroke-width=".8">
+          <path d="M350-40 520 130 350 300 180 130Z" opacity=".31"/><path d="M350-10 490 130 350 270 210 130Z" opacity=".23"/><path d="M350 26 454 130 350 234 246 130Z" opacity=".19"/>
+          <path d="M-40 230 45 145l85 85-85 85Z" opacity=".18"/><path d="M0 230 45 185l45 45-45 45Z" opacity=".23"/>
+          <path d="M350 20v220m-110-110h220M272 52l156 156m0-156L272 208" opacity=".11"/>
+        </g><g fill="#e6b85c"><circle cx="350" cy="130" r="2.4"/><circle cx="45" cy="230" r="2"/><circle cx="430" cy="44" r="1.5"/></g>
+      </svg>
+      <div class="topline">
+        <div class="emblem" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="M5 9 17.5 31h5L10 9H5Z" fill="#42c2b5"/><path d="M17.5 31 30 9h5L22.5 31h-5Z" fill="#e6b85c"/><path d="m13.5 24 4 7h5l-4-7h-5Z" fill="#f1cf7b" opacity=".9"/></svg></div>
+        <div><p class="brand-name">ویرا</p><p class="brand-caption">همراه هوشمند سازمان شما</p></div>
+      </div>
+      <div class="hero-copy"><div class="kicker">سامانه سازمانی</div><h1>سامانه حضور و غیاب</h1><p class="hero-sub">ثبت روزانه، ساده و مطمئن</p></div>
+    </header>
+    <main class="main">
+      <div class="intro"><span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span><div class="intro-text"><strong>برای ثبت، موقعیت مکانی شما بررسی می‌شود</strong><p>نوع ثبت را انتخاب کنید؛ موقعیت فقط با فشردن دکمهٔ ادامه دریافت می‌شود.</p></div></div>
+      <div class="actions" role="group" aria-label="انتخاب نوع ثبت">
+        <button class="action in" type="button" data-action="in" aria-pressed="false"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14 4h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-5M10 16l4-4-4-4m4 4H3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><strong>ثبت ورود</strong><small>شروع روز کاری</small></button>
+        <button class="action out" type="button" data-action="out" aria-pressed="false"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M10 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5m4-4 4-4-4-4m4 4H8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><strong>ثبت خروج</strong><small>پایان روز کاری</small></button>
+      </div>
+      <div class="picked" aria-live="polite"><span class="check" aria-hidden="true">✓</span><div><b>نوع ثبت:</b> <span id="selectionText">هنوز انتخاب نشده</span></div></div>
+      <button id="submit" class="submit" type="button"><span>ثبت موقعیت و ادامه</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <aside class="safety"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.3-8 10-4.6-1.7-8-5-8-10V6l8-3Z" stroke="currentColor" stroke-width="1.7"/><path d="M9 12.2 11 14l4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><p>موقعیت فقط یک‌بار و پس از اقدام شما دریافت می‌شود؛ ردیابی خودکار انجام نمی‌شود.</p></aside>
+    </main>
+    <section class="guide" aria-label="راهنما"><p><strong>راهنما:</strong> ارسال اطلاعات فقط زمانی انجام می‌شود که صفحه را از دکمهٔ ربات و داخل تلگرام باز کرده باشید. بیرون از تلگرام، وضعیت و دقت موقعیت روی همین صفحه نمایش داده می‌شود.</p><p class="secure"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 1 1 8 0v3" stroke="currentColor" stroke-width="1.8"/></svg>برای دریافت موقعیت، صفحه باید روی HTTPS یا محیط امن مرورگر اجرا شود.</p></section>
+    <footer class="footer">ویرا · موقعیت مکانی تنها با درخواست شما دریافت می‌شود</footer>
+  </div>
+  <script>
+    (() => {
+      'use strict';
+      const buttons = [...document.querySelectorAll('[data-action]')];
+      const selectionText = document.getElementById('selectionText');
+      const submit = document.getElementById('submit');
+      const status = document.getElementById('status');
+      const labels = {in: 'ثبت ورود', out: 'ثبت خروج'};
+      let action = null;
+      let busy = false;
+      const tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
+      if (tg) { try { tg.ready(); tg.expand(); } catch (_) { /* پیش‌نمایش یا نسخه محدود SDK */ } }
+      function show(message, type='info', extra='') {
+        status.className = 'status show ' + type;
+        status.replaceChildren(document.createTextNode(message));
+        if (extra) { const line = document.createElement('div'); line.className = 'coords'; line.textContent = extra; status.appendChild(line); }
+      }
+      function select(value, fromUser=false) {
+        if (!labels[value]) return;
+        action = value;
+        buttons.forEach(btn => btn.setAttribute('aria-pressed', String(btn.dataset.action === value)));
+        selectionText.textContent = labels[value];
+        if (fromUser) show('گزینهٔ «' + labels[value] + '» انتخاب شد. برای دریافت موقعیت، دکمهٔ ثبت موقعیت و ادامه را بزنید.', 'info');
+      }
+      buttons.forEach(btn => btn.addEventListener('click', () => select(btn.dataset.action, true)));
+      const initial = new URLSearchParams(window.location.search).get('a');
+      if (initial === 'in' || initial === 'out') select(initial);
+      else show('برای شروع، ورود یا خروج را انتخاب کنید. هنوز درخواستی برای موقعیت ارسال نشده است.', 'info');
+      function finishWithPosition(position) {
+        const c = position && position.coords;
+        if (!c || !Number.isFinite(c.latitude) || !Number.isFinite(c.longitude) || !Number.isFinite(c.accuracy) || Math.abs(c.latitude) > 90 || Math.abs(c.longitude) > 180 || c.accuracy < 0) {
+          show('مختصات معتبر دریافت نشد. لطفاً دوباره تلاش کنید.', 'error'); return;
+        }
+        const payload = {action, latitude: c.latitude, longitude: c.longitude, accuracy: c.accuracy};
+        const accuracyText = 'دقت تقریبی: ' + Math.round(c.accuracy) + ' متر';
+        if (tg && typeof tg.sendData === 'function' && tg.initData) {
+          try { tg.sendData(JSON.stringify(payload)); show('«' + labels[action] + '» ثبت و برای ربات تلگرام ارسال شد.', 'success', accuracyText); }
+          catch (_) { show('موقعیت دریافت شد، اما ارسال به تلگرام ناموفق بود. صفحه را داخل تلگرام باز کنید یا دوباره تلاش کنید.', 'error', accuracyText); }
+        } else {
+          show('موقعیت دریافت شد؛ اما این صفحه بیرون از تلگرام باز است و اطلاعات به ربات ارسال نشد. برای ارسال، همین صفحه را از دکمهٔ ربات داخل تلگرام باز کنید.', 'info', accuracyText);
+        }
+      }
+      function locationError(error) {
+        let message = 'دریافت موقعیت ناموفق بود. اتصال و تنظیمات موقعیت دستگاه را بررسی و دوباره تلاش کنید.';
+        if (error && error.code === 1) message = 'اجازهٔ موقعیت مکانی داده نشد. دسترسی مکان را در تنظیمات مرورگر مجاز کنید و دوباره تلاش کنید.';
+        else if (error && error.code === 2) message = 'موقعیت دستگاه در دسترس نیست. GPS یا سرویس موقعیت را روشن کنید و دوباره تلاش کنید.';
+        else if (error && error.code === 3) message = 'زمان دریافت موقعیت تمام شد. در فضای باز یا با GPS روشن دوباره تلاش کنید.';
+        show(message, 'error');
+      }
+      submit.addEventListener('click', () => {
+        if (busy) return;
+        if (!action) { show('ابتدا «ثبت ورود» یا «ثبت خروج» را انتخاب کنید.', 'error'); return; }
+        if (!window.isSecureContext || !navigator.geolocation) {
+          show('امکان دریافت موقعیت فراهم نیست. این صفحه را با HTTPS (یا localhost) در مرورگری دارای پشتیبانی مکان باز کنید.', 'error'); return;
+        }
+        busy = true; submit.disabled = true;
+        show('در حال دریافت موقعیت… اگر مرورگر اجازه خواست، دسترسی را تأیید کنید. این درخواست با اقدام شما آغاز شده است.', 'info');
+        navigator.geolocation.getCurrentPosition(position => {
+          try { finishWithPosition(position); } finally { busy = false; submit.disabled = false; }
+        }, error => { try { locationError(error); } finally { busy = false; submit.disabled = false; } },
+        {enableHighAccuracy: true, timeout: 20000, maximumAge: 0});
+      });
+    })();
+  </script>
+</body>
+</html>
