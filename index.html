@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#101d35"><meta name="description" content="سامانه حضور و غیاب ویرا"><title>ویرا | سامانه حضور و غیاب</title>
+<style>
+:root{color-scheme:light;--navy:#111D34;--navy2:#142844;--teal:#138C88;--gold:#E0B058;--ink:#19263c;--muted:#788496;--line:#E2E8F0;--paper:#FFFFFF;--canvas:#F3F5F7;--shadow:0 15px 38px rgba(20,36,62,.12)}*{box-sizing:border-box}html{min-height:100%;background:var(--canvas);scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);font-family:Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.75;background:var(--canvas)}button,input,textarea{font:inherit}button{cursor:pointer}.app{width:min(100%,560px);min-height:100vh;margin:auto;background:var(--canvas);padding-bottom:calc(73px + env(safe-area-inset-bottom));position:relative}.hero{position:relative;isolation:isolate;overflow:hidden;color:#fff;background:radial-gradient(ellipse at 82% 0%,#234765 0,transparent 43%),linear-gradient(145deg,#111c33,#142c48);padding:calc(20px + env(safe-area-inset-top)) 23px 102px;border-radius:0 0 0 0;min-height:228px}.hero:after{content:"";position:absolute;z-index:-1;width:240px;height:240px;border:1px solid #e6b85c25;border-radius:50%;left:-130px;top:-130px;box-shadow:0 0 0 27px #e6b85c0c,0 0 0 55px #e6b85c08}.hero-top{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px}.emblem{width:49px;height:49px;border-radius:50%;display:grid;place-items:center;color:var(--gold)}.emblem svg{width:48px;height:48px;filter:drop-shadow(0 2px 6px #0004)}.brand strong{font-size:21px;letter-spacing:.02em}.brand small{display:block;color:#d0d8e2;font-size:10px;margin-top:-3px}.profile-icon{width:39px;height:39px;border-radius:50%;display:grid;place-items:center;border:1px solid #e4b95d88;background:#ffffff12;color:var(--gold)}.profile-icon svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}.hero h1{position:relative;z-index:1;font-size:22px;line-height:1.5;margin:20px 0 0;font-weight:700}.hero p{position:relative;z-index:1;color:#bfccda;font-size:12px;margin:2px 0 0}.hero-wave{position:absolute;z-index:0;bottom:-1px;left:0;width:100%;height:76px}.content{position:relative;z-index:1;padding:2px 17px 22px;margin-top:-15px}.view{display:none}.view.active{display:block}.section-title{font-size:18px;margin:4px 2px 12px;color:#20314c}.card{background:var(--paper);border:1px solid #edf0f3;border-radius:19px;padding:15px;margin-bottom:12px;box-shadow:0 5px 18px #17233a09}.address{display:flex;gap:13px;align-items:center;min-height:105px;margin-bottom:14px;background:#fff}.building-art{width:92px;height:78px;flex:none;border-radius:13px;display:grid;place-items:center;overflow:hidden;background:linear-gradient(145deg,#f4f7f6,#e9f0ee)}.building-art svg{width:78px;height:70px}.address-text{flex:1;min-width:0}.address p{font-size:12px;line-height:1.85;margin:0;color:#5d6878}.address strong{display:block;margin-bottom:2px;color:#26364b;font-size:14px}.actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:13px 0 15px;direction:rtl}.status-panel{background:#fff;border:1px solid #edf0f3;border-radius:19px;padding:16px;box-shadow:0 5px 18px #17233a09;min-height:91px;position:relative;padding-right:56px}.status-panel:before{content:"✓";position:absolute;right:15px;top:21px;width:29px;height:29px;border-radius:50%;background:#e8f5f1;color:#168b78;text-align:center;font-size:18px;font-weight:bold;line-height:29px}.status-panel h2{font-size:14px;margin:0 0 3px;color:#28374d}.status-panel p{color:var(--muted);font-size:12px;margin:0}.status{display:none;padding:11px 12px;margin:12px 0;border:1px solid #dfe6ed;border-radius:12px;background:#f7f9fb;color:#37556b;font-size:12px;line-height:1.8;overflow-wrap:anywhere}.status.show{display:block}.status.success{background:#eef8f1;border-color:#cce8d4;color:#286445}.status.error{background:#fff4f1;border-color:#f0d5cf;color:#99483e}.status.info{background:#f1f7fb}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:5px;margin-bottom:13px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:bold;color:#39475d}.field input,.field textarea{width:100%;border:1px solid #d9e0e8;border-radius:11px;padding:11px 12px;background:#fff;color:var(--ink);font-size:14px;min-height:46px}.field textarea{min-height:95px;resize:vertical}.field input:focus,.field textarea:focus{outline:3px solid #138c8730;border-color:var(--teal)}.secondary{border:1px solid var(--line);background:white;color:#526178;border-radius:11px;padding:8px 12px;font-size:12px;transition:all 0.2s;cursor:pointer}.secondary:hover{background:#f3f5f7}.selection{border-radius:12px;background:#f7f8fa;padding:10px 12px;margin:0 0 12px;font-size:13px;color:#526178}.selection strong{color:#26364f}.office-details{border:1px solid #e8ecef;border-radius:13px;background:#fafbfc;padding:11px 13px;margin:0 0 12px;display:flex;flex-direction:column;gap:2px;font-size:12px;color:#45566a}.office-details strong{color:#23354c}.office-details small{font-size:11px;color:#788496}.hint{font-size:12px;color:var(--muted);margin:0 0 15px}.info-list{padding-right:21px;margin:0;color:#526178;font-size:13px}.info-list li{padding:5px 0}.notice{background:#fff8e9;border:1px solid #f0dfb8;color:#795c23;border-radius:14px;padding:14px;font-size:13px}.report-legend{display:flex;flex-wrap:wrap;gap:8px 14px;padding:12px 14px;margin-bottom:12px;background:#fff;border:1px solid #edf0f3;border-radius:14px;font-size:11px;color:#526178}.legend-item{display:inline-flex;align-items:center;gap:5px}.legend-dot{width:9px;height:9px;border-radius:50%;display:inline-block}.legend-success{background:#3a9b61}.legend-error{background:#d6534d}.legend-pending{background:#d9a52e}.report-list{display:grid;gap:10px}.report-card{background:#fff;border:1px solid #edf0f3;border-right:4px solid #b9c2cc;border-radius:14px;padding:12px 13px;box-shadow:0 4px 14px #17233a08}.report-card.success{border-right-color:#3a9b61}.report-card.error{border-right-color:#d6534d}.report-card.pending{border-right-color:#d9a52e}.report-card.working{border-right-color:#8c9aaa}.report-card.approved{border-right-color:#3a9b61}.report-card.rejected{border-right-color:#d6534d}.report-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.report-event{font-size:13px;font-weight:bold;color:#26364b}.report-time{font-size:10px;color:#788496;white-space:nowrap}.report-status{display:inline-block;margin-top:7px;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:bold}.report-card.success .report-status{background:#e7f5eb;color:#286445}.report-card.error .report-status{background:#fff0ed;color:#99483e}.report-card.pending .report-status{background:#fff6dd;color:#86651a}.report-card.working .report-status{background:#eff2f5;color:#627184}.report-card.approved .report-status{background:#e7f5eb;color:#286445}.report-card.rejected .report-status{background:#fff0ed;color:#99483e}.report-detail{font-size:11px;color:#5d6878;margin-top:6px;line-height:1.8}.empty-state{text-align:center;padding:28px 16px;color:#788496;font-size:13px;background:#fff;border:1px dashed #d9e0e8;border-radius:14px}.guidance{margin-top:12px;background:#f1f7fb;border:1px solid #d9e8f0;color:#456175;border-radius:14px;padding:13px;font-size:12px}.guidance strong{color:#263f56}.guidance ul{margin:7px 0 0;padding-right:20px}.guidance li{padding:3px 0}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.foot{text-align:center;color:#9aa5b3;font-size:10px;padding:0 10px 15px}
+
+/* --- کدهای جدید برای زیبایی و رنگ‌بندی دکمه‌ها --- */
+.action {
+    min-height: 102px;
+    color: #fff;
+    border: 0;
+    border-radius: 17px;
+    padding: 13px 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+}
+.action:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15) !important;
+}
+.action:active {
+    transform: translateY(1px);
+}
+.action[data-attendance="entry"] {
+    background: linear-gradient(135deg, #1A365D, #2B6CB0);
+    box-shadow: 0 7px 16px rgba(43, 108, 176, 0.3);
+}
+.action.exit {
+    background: linear-gradient(135deg, #138C88, #20B2AA);
+    box-shadow: 0 7px 16px rgba(19, 140, 136, 0.3);
+}
+.action.remote {
+    background: linear-gradient(135deg, #193B59, #2A628F);
+    box-shadow: 0 7px 16px rgba(25, 59, 89, 0.3);
+}
+.action.parttime {
+    background: linear-gradient(135deg, #2D6A66, #43A39D);
+    box-shadow: 0 7px 16px rgba(45, 106, 102, 0.3);
+}
+.action.leave {
+    background: linear-gradient(135deg, #FDE68A, #F59E0B);
+    color: #422006;
+    box-shadow: 0 7px 16px rgba(245, 158, 11, 0.3);
+}
+.action.leave small { color: #78350F; }
+.action b { display: block; font-size: 14px; white-space: nowrap; }
+.action small { display: block; color: #ffffffc9; font-size: 10px; line-height: 1.55; }
+.action[aria-pressed=true] { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+.primary {
+    width: 100%;
+    border: 0;
+    border-radius: 13px;
+    min-height: 50px;
+    padding: 11px 14px;
+    background: linear-gradient(105deg, #F59E0B, #D97706);
+    color: #fff;
+    font-weight: 800;
+    transition: all 0.2s;
+    box-shadow: 0 4px 10px rgba(217, 119, 6, 0.3);
+    cursor: pointer;
+}
+.primary:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(217, 119, 6, 0.4); }
+.primary:disabled { opacity: .65; cursor: wait; }
+
+.bottom-nav {
+    position: fixed;
+    z-index: 5;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100%, 560px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 9px 8px calc(9px + env(safe-area-inset-bottom));
+    background: var(--navy);
+    box-shadow: 0 -5px 18px #17233a20;
+    border-radius: 17px 17px 0 0;
+}
+.nav-btn {
+    border: 0;
+    background: transparent;
+    color: #A0AEC0;
+    padding: 5px 2px 4px;
+    border-radius: 12px;
+    font-size: 11px;
+    position: relative;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.nav-btn:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.nav-btn[aria-current=page] { color: #FBBF24; font-weight: bold; }
+.nav-btn[aria-current=page]:before {
+    content: "";
+    position: absolute;
+    top: -9px;
+    left: 25%;
+    right: 25%;
+    height: 3px;
+    border-radius: 3px;
+    background: #FBBF24;
+    box-shadow: 0 0 10px #FBBF24;
+}
+
+@media(min-width:580px){body{padding:20px 0}.app{min-height:calc(100vh - 40px);border-radius:25px;overflow:hidden;box-shadow:var(--shadow)}.bottom-nav{bottom:0;border-radius:17px 17px 0 0;width:min(100%,560px)}.hero{border-radius:25px 25px 0 0}}
+@media(max-width:370px){.content{padding-inline:12px}.card{padding:12px}.hero{padding-inline:17px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.actions{gap:7px}.action{padding-inline:4px;min-height:94px}.action b{font-size:12px}.action small{font-size:9px}.building-art{width:75px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+html,body,.app{background:#F3F5F7}
+.hero{background:linear-gradient(145deg,#111D34 0%,#142844 100%)}
+.hero:after{border-color:#D8B45440;box-shadow:0 0 0 27px #D8B45418,0 0 0 55px #D8B45410}
+.hero-wave path:nth-child(1){fill:#E0B058}.hero-wave path:nth-child(2){fill:#138C88}.hero-wave path:nth-child(3){fill:#F3F5F7}
+.card,.status-panel,.report-legend,.report-card{background:#FFFFFF;border-color:#E2E8F0}
+.actions{grid-template-columns:repeat(2,minmax(0,1fr));direction:rtl;gap:10px}
+.action.leave{grid-column:1/-1;min-height:62px}
+.request-dialog{width:min(92vw,440px);max-height:min(85vh,720px);border:1px solid #E2E8F0;border-radius:20px;padding:0;color:var(--ink);box-shadow:0 24px 70px #101d3540}
+.request-dialog::backdrop{background:#101d3580;backdrop-filter:blur(2px)}
+.request-dialog-inner{padding:20px}
+.request-dialog h2{font-size:18px;margin:0 0 12px;color:#20314c}
+.dialog-actions{display:flex;gap:9px;align-items:center;margin-top:12px}
+.dialog-actions .primary{flex:1}
+@media(max-width:370px){.actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.action{min-height:88px}.action.leave{min-height:60px}}
+
+</style></head>
+<body><div class="app">
+<header class="hero"><div class="hero-top"><div class="brand"><span class="emblem" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 10h7l9 23 9-23h7L27 39h-7z" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"/><circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".55"/></svg></span><div><strong>ویرا</strong></div></div><span class="profile-icon" role="img" aria-label="پروفایل"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.3"/><path d="M5.5 20c.4-4 2.7-6 6.5-6s6.1 2 6.5 6"/></svg></span></div><h1>سامانه حضور و غیاب</h1><svg class="hero-wave" viewBox="0 0 560 90" preserveAspectRatio="none" aria-hidden="true"><path fill="#E0B058" d="M0 35C155 92 356 5 560 39v51H0z"/><path fill="#138C88" d="M0 48C175 100 378 20 560 49v41H0z"/><path fill="#F3F5F7" d="M0 61C180 112 374 35 560 59v31H0z"/></svg></header>
+<main class="content">
+<section id="home" class="view active" aria-labelledby="home-title"><h2 id="home-title" class="section-title">خانه</h2>
+<div class="card address"><span class="building-art" aria-hidden="true"><svg viewBox="0 0 80 72"><rect x="6" y="27" width="68" height="45" rx="5" fill="#eaf1f1"/><path d="M18 27V11h44v16" fill="#fff" stroke="#d4dfdf" stroke-width="2"/><path d="M24 17h8v7h-8zm14 0h8v7h-8zm14 0h4v7h-4zM16 36h11v11H16zm19 0h11v11H35zm19 0h11v11H54zM16 54h11v18H16zm19 0h11v11H35zm19 0h11v11H54z" fill="#67aaa3"/><path d="M5 71h70" stroke="#d8b45d" stroke-width="3"/></svg></span><div class="address-text"><strong>نشانی محل کار</strong><p>آدرس: میدان امام، روبه‌روی بستنی گرین سان (طلاب)، کوچه اول، درب اول دست چپ، ط ۲</p></div></div>
+<div class="actions" role="group" aria-label="انتخاب اقدام حضور و غیاب">
+    <button type="button" class="action" data-attendance="entry" aria-pressed="false"><b>ثبت ورود</b><small>شروع روز کاری</small></button>
+    <button type="button" class="action exit" data-attendance="exit" aria-pressed="false"><b>ثبت خروج</b><small>پایان روز کاری</small></button>
+    <button type="button" class="action remote" data-request="remote"><b>کار از راه دور</b><small>ثبت درخواست دورکاری</small></button>
+    <button type="button" class="action parttime" data-request="parttime"><b>کار پاره‌وقت</b><small>ثبت درخواست پاره‌وقت</small></button>
+    <button type="button" class="action leave" id="open-leave"><b>درخواست مرخصی</b><small>ثبت درخواست با فرم مرخصی</small></button>
+</div>
+<div id="home-status" class="status" role="status" aria-live="polite"></div><div class="status-panel"><h2>وضعیت امروز</h2><p id="today-status">هنوز برای امروز رویدادی ثبت نشده است.</p></div>
+</section>
+<section id="guide" class="view" aria-labelledby="guide-title"><h2 id="guide-title" class="section-title">راهنمای استفاده</h2><div class="card"><ol class="info-list"><li>در بخش «تنظیمات»، نام و نام خانوادگی خود را وارد و ذخیره کنید.</li><li>در صفحهٔ خانه، روی ثبت ورود یا ثبت خروج بزنید و اجازهٔ دسترسی به موقعیت مکانی را بدهید.</li><li>درخواست مرخصی را انتخاب و فرم را تکمیل کنید.</li><li>وضعیت درخواست مرخصی را در بخش گزارش‌ها پیگیری کنید.</li></ol></div></section>
+<section id="reports" class="view" aria-labelledby="reports-title"><h2 id="reports-title" class="section-title">گزارش‌ها</h2><div class="report-legend" aria-label="راهنمای وضعیت"><span class="legend-item"><i class="legend-dot legend-success"></i>موفق / تاییدشده</span><span class="legend-item"><i class="legend-dot legend-pending"></i>در انتظار تایید</span><span class="legend-item"><i class="legend-dot legend-error"></i>ناموفق / ردشده</span></div><div id="reports-list" class="report-list" aria-live="polite"></div></section>
+<section id="settings" class="view" aria-labelledby="settings-title"><h2 id="settings-title" class="section-title">تنظیمات</h2><div class="card"><p class="hint">اطلاعات هویتی روی همین دستگاه ذخیره می‌شود و همراه درخواست ارسال خواهد شد.</p><form id="profile-form"><div class="form-grid"><div class="field"><label for="first-name">نام</label><input id="first-name" name="firstName" autocomplete="given-name" maxlength="80" required></div><div class="field"><label for="last-name">نام خانوادگی</label><input id="last-name" name="lastName" autocomplete="family-name" maxlength="100" required></div></div><button class="secondary" type="submit" style="width:100%;">ذخیرهٔ نام و نام خانوادگی</button></form><div id="profile-status" class="status" role="status" aria-live="polite"></div></div>
+<div class="card"><h3 style="font-size:15px;margin:0 0 8px">فعال‌سازی اولیهٔ موقعیت</h3><p class="hint">این مرحله فقط یک‌بار انجام می‌شود. اجازهٔ مکان مرورگر ممکن است بعداً حفظ شود، اما برای هر ورود یا خروج موقعیت تازه دریافت و بررسی خواهد شد.</p><div class="selection" aria-live="polite"><strong>اقدام انتخاب‌شده:</strong> <span id="selected-action">انتخاب نشده است</span></div><button id="location-submit" class="primary" type="button">فعال‌سازی اولیهٔ موقعیت</button><div id="settings-status" class="status" role="status" aria-live="polite"></div></div>
+</section>
+<section id="leave-form-section" class="view" aria-labelledby="leave-title"><h2 id="leave-title" class="section-title">درخواست مرخصی</h2><div class="card"><p class="hint">فرم درخواست را تکمیل کنید. برای مرخصی موقعیت مکانی درخواست نمی‌شود. پس از پذیرش webhook، درخواست با وضعیت «در انتظار تایید» ثبت می‌شود؛ این وضعیت به معنی موافقت نیست.</p><form id="leave-form"><div class="form-grid"><div class="field"><label for="from-date">از تاریخ</label><input id="from-date" name="fromDate" type="date" required></div><div class="field"><label for="to-date">تا تاریخ</label><input id="to-date" name="toDate" type="date" required></div><div class="field full"><label for="reason">دلیل مرخصی</label><textarea id="reason" name="reason" maxlength="1000" required></textarea></div></div><button id="leave-submit" class="primary" type="submit">ارسال درخواست مرخصی</button></form><div id="leave-status" class="status" role="status" aria-live="polite"></div><button id="leave-back" class="secondary" type="button">بازگشت به خانه</button></div></section>
+</main><dialog id="request-dialog" class="request-dialog" aria-labelledby="request-title"><div class="request-dialog-inner"><h2 id="request-title">درخواست</h2><p class="hint" id="request-hint">اطلاعات درخواست را تکمیل کنید.</p><form id="request-form"><div class="field"><label for="request-date">تاریخ</label><input id="request-date" name="requestDate" type="date" required></div><div class="field"><label for="request-detail">توضیحات</label><textarea id="request-detail" name="detail" maxlength="1000" required></textarea></div><button id="request-submit" class="primary" type="submit">ارسال درخواست</button></form><div id="request-status" class="status" role="status" aria-live="polite"></div><div class="dialog-actions"><button id="request-close" class="secondary" type="button">بستن</button></div></div></dialog>
+<footer class="foot">ویرا · موقعیت اولیه یک‌بار فعال می‌شود و هر ثبت با GPS تازه بررسی می‌گردد</footer>
+<nav class="bottom-nav" aria-label="پیمایش اصلی"><button class="nav-btn" type="button" data-view="guide"><span class="nav-icon" aria-hidden="true">؟</span>راهنما</button><button class="nav-btn" type="button" data-view="home" aria-current="page"><span class="nav-icon" aria-hidden="true">⌂</span>خانه</button><button class="nav-btn" type="button" data-view="reports"><span class="nav-icon" aria-hidden="true">▤</span>گزارش‌ها</button><button class="nav-btn" type="button" data-view="settings"><span class="nav-icon" aria-hidden="true">⚙</span>تنظیمات</button></nav>
+</div>
+<script>
+(()=>{'use strict';
+// برای محیط عملیاتی، پس از فعال‌سازی webhook در n8n، WEBHOOK_URL را با نشانی Production عوض کنید؛ webhook-test فقط برای آزمون است.
+const WEBHOOK_URL='https://sherkat1405.app.n8n.cloud/webhook-test/dcb6c422-f291-4152-b77d-a742dc77bde9';
+const LEAVE_STATUS_URL=''; 
+const OFFICE={latitude:36.425643,longitude:54.969658};
+const MAX_DISTANCE_METERS=100000000; // برای تست باز است
+const ADDRESS='میدان امام، روبه‌روی بستنی گرین سان (طلاب)، کوچه اول، درب اول دست چپ، ط ۲';
+const names={entry:'ثبت ورود',exit:'ثبت خروج'};let selectedAction=null,busy=false;
+const LOCATION_SETUP_KEY='viraLocationSetupComplete';
+const HISTORY_KEY='viraEventHistory.v1';
+const TEHRAN='Asia/Tehran';
+const $=id=>document.getElementById(id);const navButtons=[...document.querySelectorAll('.nav-btn')];const attendanceButtons=[...document.querySelectorAll('[data-attendance]')];
+function jalaliParts(date=new Date()){const parts=new Intl.DateTimeFormat('fa-IR-u-ca-persian',{timeZone:TEHRAN,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).formatToParts(date);return Object.fromEntries(parts.filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));}
+function currentMonthKey(date=new Date()){const p=jalaliParts(date);return p.year+'-'+p.month}
+function displayDate(date){return new Intl.DateTimeFormat('fa-IR-u-ca-persian',{timeZone:TEHRAN,dateStyle:'medium',timeStyle:'short'}).format(new Date(date))}
+function readHistory(){try{const x=JSON.parse(localStorage.getItem(HISTORY_KEY)||'[]');return Array.isArray(x)?x:[]}catch(_){return []}}
+function pruneHistory(){const month=currentMonthKey();const kept=readHistory().filter(x=>x.monthKey===month);try{localStorage.setItem(HISTORY_KEY,JSON.stringify(kept))}catch(_){}return kept}
+function addEvent(event,status,details={}){const item={id:crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random(),at:new Date().toISOString(),monthKey:currentMonthKey(),event,status,...details};const all=pruneHistory();all.unshift(item);try{localStorage.setItem(HISTORY_KEY,JSON.stringify(all))}catch(_){}renderReports();return item.id}
+function updateEventStatus(id,status,details={}){const all=pruneHistory();const item=all.find(x=>x.id===id);if(!item)return false;item.status=status;Object.assign(item,details);try{localStorage.setItem(HISTORY_KEY,JSON.stringify(all))}catch(_){}renderReports();return true}
+function updateLeaveStatus(requestId,status,managerComment='',decisionAt){const normalized=normalizeLeaveStatus(status);if(!normalized||!requestId)return false;const all=pruneHistory();const item=all.find(x=>x.requestId===requestId);if(!item)return false;item.status=normalized;if(managerComment!==undefined&&managerComment!==null)item.managerComment=String(managerComment);if(decisionAt)item.decisionAt=decisionAt;try{localStorage.setItem(HISTORY_KEY,JSON.stringify(all))}catch(_){}renderReports();return true}
+function normalizeLeaveStatus(value){const s=String(value??'').trim().toLowerCase();if(['approved','approve','accepted','تایید','تأیید','تایید شده','تأیید شده','موافقت شد'].includes(s))return 'approved';if(['rejected','reject','declined','رد','رد شده','مخالفت شد'].includes(s))return 'rejected';if(['pending','در انتظار','در انتظار تایید','در انتظار تأیید','waiting'].includes(s))return 'pending';return null}
+window.viraUpdateLeaveStatus=updateLeaveStatus;
+const LEAVE_POLL_MS=30000;let leavePollTimer=null,leavePollBusy=false;
+function leaveRecords(){return pruneHistory().filter(x=>x.requestId&&['pending','approved','rejected'].includes(x.status))}
+function setLeaveSyncNote(text,type='info'){const el=$('leave-sync-note');if(el)el.textContent=text}
+async function pollLeaveStatuses(){if(!LEAVE_STATUS_URL){return}if(leavePollBusy||document.hidden)return;leavePollBusy=true;let changed=0,checked=0;try{for(const item of leaveRecords()){if(item.status!=='pending')continue;checked++;try{const url=new URL(LEAVE_STATUS_URL,window.location.href);url.searchParams.set('requestId',item.requestId);const response=await fetch(url.toString(),{method:'GET',headers:{'Accept':'application/json'},cache:'no-store'});if(!response.ok)continue;const raw=await response.json();const data=raw?.data??raw?.result??raw;if(!data||data.found===false||data.exists===false)continue;const status=normalizeLeaveStatus(data.status??data.leaveStatus);if(!status)continue;const current=readHistory().find(x=>x.requestId===item.requestId);if(!current)continue;const comment=data.managerComment??data.comment??current.managerComment??'';const decisionAt=data.decisionAt??data.decidedAt??data.updatedAt??null;if(status!==current.status||String(comment)!==String(current.managerComment??'')||(decisionAt&&decisionAt!==current.decisionAt)){updateLeaveStatus(item.requestId,status,comment,decisionAt);changed++}}catch(_){}}if(checked===0)setLeaveSyncNote('درخواست مرخصیِ در انتظار برای استعلام وجود ندارد.');else if(changed)setLeaveSyncNote('وضعیت '+changed+' درخواست مرخصی از n8n به‌روز شد.');else setLeaveSyncNote('استعلام انجام شد؛ هنوز تصمیم تازه‌ای در Google Sheets ثبت نشده است.')}finally{leavePollBusy=false}}
+function startLeavePolling(){if(!leavePollTimer)leavePollTimer=setInterval(pollLeaveStatuses,LEAVE_POLL_MS);pollLeaveStatuses()}
+
+function reportStatusLabel(status){return status==='success'||status==='approved'?'موفق / تاییدشده':status==='pending'?'در انتظار تایید':status==='working'?'در حال بررسی':'ناموفق / ردشده'}
+function renderReports(){const list=$('reports-list');if(!list)return;const records=pruneHistory();if(!records.length){list.innerHTML='<div class="empty-state">در ماه جاری هنوز رویدادی ثبت نشده است.</div>';return}list.innerHTML=records.map(x=>{const details=[];if(x.detail)details.push(x.detail);if(x.fromDate&&x.toDate)details.push('بازه مرخصی: '+x.fromDate+' تا '+x.toDate);if(x.requestId)details.push('شناسه درخواست: '+x.requestId);if(x.managerComment)details.push('نظر مدیر: '+x.managerComment);if(x.decisionAt)details.push('زمان تصمیم: '+displayDate(x.decisionAt));return '<article class="report-card '+x.status+'"><div class="report-head"><div class="report-event">'+escapeHtml(x.event)+'</div><time class="report-time" datetime="'+x.at+'">'+displayDate(x.at)+'</time></div><span class="report-status">'+reportStatusLabel(x.status)+'</span>'+(details.length?'<div class="report-detail">'+details.map(escapeHtml).join('<br>')+'</div>':'')+'</article>'}).join('')}
+function escapeHtml(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+pruneHistory();
+function view(id){document.querySelectorAll('.view').forEach(el=>el.classList.toggle('active',el.id===id));navButtons.forEach(b=>{if(b.dataset.view===(id==='leave-form-section'?'home':id))b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});window.scrollTo({top:0,behavior:'smooth'})}
+function message(el,text,type='info'){el.textContent=text;el.className='status show '+type}
+function clearMessage(el){el.textContent='';el.className='status'}
+function readProfile(){try{return JSON.parse(localStorage.getItem('viraProfile')||'{}')}catch(_){return {}}}
+function persistProfile(first,last){const data={firstName:first.trim(),lastName:last.trim()};localStorage.setItem('viraProfile',JSON.stringify(data));return data}
+function locationSetupComplete(){try{return localStorage.getItem(LOCATION_SETUP_KEY)==='true'}catch(_){return false}}
+function markLocationSetupComplete(){localStorage.setItem(LOCATION_SETUP_KEY,'true')}
+const profile=readProfile();$('first-name').value=profile.firstName||'';$('last-name').value=profile.lastName||'';
+function selectAction(action){if(!names[action])return;selectedAction=action;attendanceButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.attendance===action)));$('selected-action').textContent=names[action]}
+navButtons.forEach(b=>b.addEventListener('click',()=>{view(b.dataset.view);if(b.dataset.view==='reports'){renderReports();pollLeaveStatuses()}}));
+renderReports();
+startLeavePolling();window.addEventListener('focus',pollLeaveStatuses);document.addEventListener('visibilitychange',()=>{if(!document.hidden)pollLeaveStatuses()});
+attendanceButtons.forEach(b=>b.addEventListener('click',()=>{const action=b.dataset.attendance;selectAction(action);if(!locationSetupComplete()){const person=readProfile();addEvent(!person.firstName||!person.lastName?names[action]+'؛ پروفایل ناقص و فعال‌سازی انجام نشده':names[action]+'؛ فعال‌سازی موقعیت انجام نشده','error');message($('home-status'),'برای استفاده از ثبت ورود یا خروج، ابتدا فعال‌سازی اولیهٔ موقعیت را در تنظیمات انجام دهید.','error');view('settings');return}performAttendance(action,$('home-status'))}));
+$('open-leave').addEventListener('click',()=>{clearMessage($('leave-status'));view('leave-form-section')});$('leave-back').addEventListener('click',()=>view('home'));
+let activeRequestType=null;
+const requestMeta={remote:{action:'remote_work',title:'درخواست کار از راه دور',hint:'تاریخ و توضیح درخواست دورکاری را وارد کنید.'},parttime:{action:'part_time',title:'درخواست کار پاره‌وقت',hint:'تاریخ و جزئیات ساعات/برنامهٔ پاره‌وقت را وارد کنید.'}};
+document.querySelectorAll('[data-request]').forEach(button=>button.addEventListener('click',()=>{activeRequestType=button.dataset.request;const meta=requestMeta[activeRequestType];$('request-title').textContent=meta.title;$('request-hint').textContent=meta.hint;$('request-form').reset();clearMessage($('request-status'));if($('request-dialog').showModal)$('request-dialog').showModal();else view('home')}));
+$('request-close').addEventListener('click',()=>{if($('request-dialog').open)$('request-dialog').close()});
+$('request-dialog').addEventListener('click',e=>{if(e.target===$('request-dialog'))$('request-dialog').close()});
+$('request-form').addEventListener('submit',async e=>{e.preventDefault();const meta=requestMeta[activeRequestType];if(!meta)return;const person=readProfile();if(!person.firstName||!person.lastName){message($('request-status'),'برای ارسال درخواست، ابتدا در تنظیمات نام و نام خانوادگی را ذخیره کنید.','error');return}const btn=$('request-submit'),date=$('request-date').value,detail=$('request-detail').value.trim();if(!date||!detail){message($('request-status'),'لطفاً تاریخ و توضیحات را تکمیل کنید.','error');return}btn.disabled=true;const payload={firstName:person.firstName,lastName:person.lastName,employee:person.firstName+' '+person.lastName,action:meta.action,requestDate:date,detail,submittedAt:new Date().toISOString()};try{await post(payload,$('request-status'));addEvent(meta.title+' ارسال شد','pending',{detail:date+' · '+detail});message($('request-status'),'درخواست به سامانه ارسال شد و در انتظار بررسی است.','success');$('today-status').textContent=meta.title+' برای '+date+' ارسال شد و در انتظار بررسی است.'}catch(err){addEvent(meta.title+'؛ ارسال ناموفق','error',{detail:err.message});message($('request-status'),err.message==='Failed to fetch'?'ارسال انجام نشد؛ اتصال اینترنت، دسترسی CORS و فعال بودن webhook را بررسی کنید.':'ارسال درخواست ناموفق بود: '+err.message,'error')}finally{btn.disabled=false}});
+
+$('profile-form').addEventListener('submit',e=>{e.preventDefault();const first=$('first-name').value.trim(),last=$('last-name').value.trim();if(!first||!last){message($('profile-status'),'لطفاً نام و نام خانوادگی را وارد کنید.','error');return}try{persistProfile(first,last);message($('profile-status'),'نام و نام خانوادگی روی این دستگاه ذخیره شد.','success')}catch(_){message($('profile-status'),'ذخیره در این مرورگر ممکن نیست. دسترسی ذخیره‌سازی را بررسی کنید.','error')}});
+function validNames(){const p=readProfile();if(!p.firstName||!p.lastName){message($('settings-status'),'ابتدا نام و نام خانوادگی را در همین صفحه وارد و ذخیره کنید.','error');return null}return p}
+function haversine(lat1,lon1,lat2,lon2){const rad=x=>x*Math.PI/180,R=6371000,dLat=rad(lat2-lat1),dLon=rad(lon2-lon1),a=Math.sin(dLat/2)**2+Math.cos(rad(lat1))*Math.cos(rad(lat2))*Math.sin(dLon/2)**2;return 2*R*Math.atan2(Math.sqrt(a),Math.sqrt(1-a))}
+async function post(payload,statusEl){const response=await fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});if(!response.ok)throw new Error('HTTP '+response.status);return response}
+async function getFreshPosition(){return new Promise((resolve,reject)=>navigator.geolocation.getCurrentPosition(resolve,reject,{enableHighAccuracy:true,timeout:20000,maximumAge:0}))}
+function locationError(err){return err.code===1?'اجازهٔ موقعیت مکانی داده نشد. برای فعال‌سازی اولیه، دسترسی مکان مرورگر را از تنظیمات آن فعال کنید.':err.code===2?'موقعیت دستگاه در دسترس نیست؛ GPS یا سرویس مکان را بررسی کنید.':err.code===3?'زمان دریافت موقعیت تمام شد؛ دوباره تلاش کنید.':'دریافت موقعیت ناموفق بود.'}
+async function submitFreshAttendance(action,statusEl){const person=readProfile();if(!person.firstName||!person.lastName){message(statusEl,'ابتدا نام و نام خانوادگی را در تنظیمات ذخیره کنید.','error');view('settings');return}let pos;try{pos=await getFreshPosition()}catch(err){throw err}const c=pos.coords;if(!Number.isFinite(c.latitude)||!Number.isFinite(c.longitude)||!Number.isFinite(c.accuracy)||Math.abs(c.latitude)>90||Math.abs(c.longitude)>180||c.accuracy<0){throw new Error('مختصات معتبر دریافت نشد.')}const distance=haversine(c.latitude,c.longitude,OFFICE.latitude,OFFICE.longitude);if(distance>MAX_DISTANCE_METERS){throw new Error('شما در محدودهٔ مجاز حضور ندارید. فاصلهٔ محاسبه‌شده تا دفتر '+Math.round(distance)+' متر است؛ حداکثر مجاز ۱۰ متر است.')}const payload={firstName:person.firstName,lastName:person.lastName,action,latitude:c.latitude,longitude:c.longitude,accuracy:c.accuracy,timestamp:new Date(pos.timestamp||Date.now()).toISOString(),address:ADDRESS};try{await post(payload,statusEl)}catch(err){throw err}message(statusEl,names[action]+' با موفقیت به سرویس ارسال شد. فاصله از محل کار: '+distance.toFixed(1)+' متر؛ دقت GPS حدود '+Math.round(c.accuracy)+' متر.','success');$('today-status').textContent=names[action]+' · '+new Date().toLocaleTimeString('fa-IR',{hour:'2-digit',minute:'2-digit'})+' · ارسال به سامانه موفق بود.'}
+async function performAttendance(action,statusEl){if(busy)return;const attemptId=addEvent(names[action]+'؛ شروع تلاش','working',{detail:'در حال بررسی موقعیت و ارسال'});if(!window.isSecureContext||!navigator.geolocation){updateEventStatus(attemptId,'error',{event:names[action]+'؛ GPS پشتیبانی نمی‌شود',detail:'HTTPS یا Geolocation در دسترس نیست'});message(statusEl,'دریافت موقعیت ممکن نیست. صفحه را با HTTPS و مرورگری دارای پشتیبانی مکان باز کنید.','error');return}busy=true;message(statusEl,'در حال دریافت موقعیت تازه برای '+names[action]+'؛ اجازهٔ مرورگر ممکن است حفظ شده باشد اما GPS دوباره بررسی می‌شود.','info');try{await submitFreshAttendance(action,statusEl);updateEventStatus(attemptId,'success',{event:names[action]+'؛ ارسال به سامانه موفق',detail:'پاسخ HTTP موفق دریافت شد'})}catch(err){const detail=err.code?locationError(err):err.message;updateEventStatus(attemptId,'error',{event:names[action]+'؛ ثبت ناموفق',detail});message(statusEl,err.code?locationError(err):(err.message==='Failed to fetch'?'ارسال به سرویس انجام نشد؛ اتصال اینترنت، دسترسی CORS و فعال بودن webhook را بررسی و دوباره تلاش کنید.':'ثبت موقعیت ناموفق بود: '+err.message),'error')}finally{busy=false}}
+$('location-submit').addEventListener('click',async()=>{if(busy)return;clearMessage($('settings-status'));const person=validNames();if(!person)return;if(locationSetupComplete()){message($('settings-status'),'فعال‌سازی اولیه قبلاً انجام شده است. برای ثبت ورود یا خروج از صفحهٔ خانه اقدام کنید.','info');return}if(!window.isSecureContext||!navigator.geolocation){message($('settings-status'),'دریافت موقعیت ممکن نیست. صفحه را با HTTPS و مرورگری دارای پشتیبانی مکان باز کنید.','error');return}busy=true;const btn=$('location-submit');btn.disabled=true;message($('settings-status'),'در حال بررسی اولیهٔ موقعیت؛ اگر مرورگر اجازه خواست، آن را تأیید کنید.','info');try{const pos=await getFreshPosition();const c=pos.coords;if(!Number.isFinite(c.latitude)||!Number.isFinite(c.longitude)||!Number.isFinite(c.accuracy)||Math.abs(c.latitude)>90||Math.abs(c.longitude)>180||c.accuracy<0)throw new Error('مختصات معتبر دریافت نشد.');const distance=haversine(c.latitude,c.longitude,OFFICE.latitude,OFFICE.longitude);if(distance>MAX_DISTANCE_METERS)throw new Error('برای فعال‌سازی باید در محدودهٔ مجاز دفتر باشید. فاصلهٔ محاسبه‌شده '+Math.round(distance)+' متر است؛ حداکثر مجاز ۱۰ متر است.');markLocationSetupComplete();message($('settings-status'),'فعال‌سازی اولیه با موفقیت انجام شد. از این پس هر ورود یا خروج موقعیت تازه را بررسی می‌کند.','success')}catch(err){message($('settings-status'),err.code?locationError(err):err.message,'error')}finally{busy=false;btn.disabled=false}});
+$('leave-form').addEventListener('submit',async e=>{e.preventDefault();clearMessage($('leave-status'));const person=readProfile();if(!person.firstName||!person.lastName){message($('leave-status'),'برای ارسال درخواست، ابتدا در تنظیمات نام و نام خانوادگی را ذخیره کنید.','error');view('settings');return}const fromDate=$('from-date').value,toDate=$('to-date').value,reason=$('reason').value.trim();if(!fromDate||!toDate||!reason){message($('leave-status'),'لطفاً تاریخ شروع، تاریخ پایان و دلیل مرخصی را تکمیل کنید.','error');return}if(toDate<fromDate){message($('leave-status'),'تاریخ پایان نمی‌تواند قبل از تاریخ شروع باشد.','error');return}const requestId=crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random();const btn=$('leave-submit');btn.disabled=true;const payload={requestId,firstName:person.firstName,lastName:person.lastName,employee:person.firstName+' '+person.lastName,action:'leave_request',fromDate,toDate,reason,submittedAt:new Date().toISOString(),status:'pending'};try{await post(payload,$('leave-status'));addEvent('درخواست مرخصی ارسال شد','pending',{requestId,fromDate,toDate,detail:'در انتظار پاسخ کارفرما'});message($('leave-status'),'درخواست مرخصی به سامانه ارسال شد و در انتظار تایید است؛ این وضعیت به معنی موافقت نیست.','success');$('today-status').textContent='درخواست مرخصی از '+fromDate+' تا '+toDate+' در انتظار تایید است.'}catch(err){addEvent('درخواست مرخصی؛ ارسال ناموفق','error',{requestId,fromDate,toDate,detail:err.message});message($('leave-status'),err.message==='Failed to fetch'?'ارسال درخواست انجام نشد؛ اتصال اینترنت، دسترسی CORS و فعال بودن webhook را بررسی کنید.':'ارسال درخواست ناموفق بود: '+err.message,'error')}finally{btn.disabled=false}})
+})();
+</script></body></html>
